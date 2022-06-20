@@ -2,15 +2,10 @@
 
 const Table1 = ({sortData, contactData}) => {
   return (
-    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '10px'}}>
+    <div>
+    <div >
     <table
-      border="1px"
-      style={{
-        borderCollapse: "collapse",
-        borderSpacing: "10px 30px",
-        width: "400px",
-      }}
-    >
+      border="1px" className="table">
       <thead>
         <tr>
           <th></th>
@@ -40,6 +35,16 @@ const Table1 = ({sortData, contactData}) => {
         ))}
       </tbody>
     </table>
+    </div>
+    <nav aria-label="Статьи по Bootstrap 4">
+    <ul className="pagination pagination-sm justify-content-center">
+        <li className="page-item"><a className="page-link" href="#">Предыдущая</a></li>
+        <li className="page-item"><a className="page-link" href="#">1</a></li>
+        <li className="page-item"><a className="page-link" href="#">2</a></li>
+        <li className="page-item"><a className="page-link" href="#">3</a></li>
+        <li className="page-item"><a className="page-link" href="#">Следующая</a></li>
+    </ul>
+</nav>
     </div>
   );
 };

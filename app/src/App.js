@@ -2,6 +2,11 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Main from './components/Main';
 import Table1 from './components/Table';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 const data = [
   {name: 'Ivan', surname: 'Ivanov', middleName: 'Ivanovich', birthday: '23.04.2000'},
@@ -35,9 +40,15 @@ function App() {
   },[])
 
   return (
+    <div className="App">
       <div className="container">
-      <Main />
-      <Table1 contactData={contactData} sortData={sortData}/>
+          <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Main contactData={contactData} sortData={sortData}/>}/>
+            <Route path='/allContact' element={<Table1 contactData={contactData} sortData={sortData}/>} />
+          </Routes>
+          </BrowserRouter>
+        </div>
     </div>
   );
 }
